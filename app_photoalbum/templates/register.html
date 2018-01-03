@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Rejestracja
+{% endblock %}
+
+{% block content %}
+    <div class="my_form">
+        <h1>Rejestracja nowego konta</h1>
+
+        <form method="POST">
+            <div class="form-group">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <br>
+                <button type="submit" class="btn btn-primary" style="float: right">Załóż konto</button>
+            </div>
+        </form>
+        <br>
+        <br>
+    </div>
+{% endblock %}
+{% block footer %}
+    <br>
+    <footer class="container-fluid text-center">
+        <p>
+            <a href="user_login/">Logowanie</a>
+        </p>
+    </footer>
+{% endblock %}

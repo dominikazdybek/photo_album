@@ -1,0 +1,40 @@
+{%  extends "base.html"  %}
+
+{% block title %}
+    Strona logowania
+{% endblock %}
+
+{% block content %}
+<div class="my_form">
+    <h1>Logowanie</h1>
+
+    {% if blad %}
+        <div class="alert alert-danger">
+            Błędny login lub hasło!
+        </div>
+    {% endif %}
+
+    <form method="post" action="">
+
+        {% csrf_token %}
+        <div class="form-group">
+            {% for field in form %}
+                {{ field.label }}<br>
+                {{ field }}<br>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn btn-primary" style="float: right">zaloguj</button>
+        <br>
+    </form>
+    <br>
+</div>
+{%  endblock %}
+{%  block footer %}
+    <footer class="container-fluid text-center">
+        <p>
+            <a href="/logout">Wyloguj</a>
+            <a href="/user_login">Logowanie</a>
+            <a href="/register">Rejestracja</a>
+        </p>
+    </footer>
+{% endblock %}
