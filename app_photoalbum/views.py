@@ -1,8 +1,8 @@
 from django.shortcuts import render_to_response, render, redirect
 from django.views import View
-from .models import Photo
+from .models import Photo, Like
 from .forms import UploadFileForm
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from .forms import LoginForm, RegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
@@ -24,7 +24,7 @@ class UserLoginView(View):
             if user is not None:
                 login(request, user)
                 # return HttpResponseRedirect('/logout')
-                return HttpResponseRedirect("/main")
+                return HttpResponseRedirect("/")
 
         return render(request, "user_login.html", {"form": form, "blad": True})
 
@@ -57,8 +57,15 @@ class RegisterView(FormView):
 class MainView(View):
 
     def get(self, request):
-        photos = Photo.objects.all()
+        photos = Photo.objects.all().order_by('-creation_date')
         user = request.user
+        like_dislike_user = Like.objects.filter(author=user)
+        for photo in photos:
+            like_dislike = photo.like_set.filter(author=user).last()
+            if like_dislike is not None:
+                photo.like_dislike_user = like_dislike.liked
+            else:
+                photo.like_dislike_user = False
         form = UploadFileForm()
         return render(request, 'main.html', {'photos': photos,
                                              'user': user,
@@ -71,6 +78,53 @@ class MainView(View):
         if form.is_valid():
             instance = Photo(image = request.FILES['image'], user=user)
             instance.save()
-            return HttpResponseRedirect("/main/")
+            return HttpResponseRedirect("/")
         return render(request, 'main.html', {'photos': photos,
                                              'form': form})
+
+
+class UserView(View):
+
+    def get(self, request):
+        user = request.user
+        photos = Photo.objects.filter(user=user).order_by('-creation_date')
+        form = UploadFileForm()
+        return render(request, 'main.html', {'photos': photos,
+                                             'user': user,
+                                             'form': form})
+
+    def post(self, request):
+        form = UploadFileForm(request.POST, request.FILES)
+        photos = Photo.objects.all()
+        user = request.user
+        if form.is_valid():
+            instance = Photo(image=request.FILES['image'], user=user)
+            instance.save()
+            return HttpResponseRedirect("/")
+        return render(request, 'user.html', {'photos': photos,
+                                             'form': form})
+
+
+class LikeView(View):
+
+    def post(self, request, my_id):
+        photo = Photo.objects.get(pk=my_id)
+        user = request.user
+
+        toggled_like = True
+        try:
+            like = Like.objects.get(author=user, photo=photo)
+            toggled_like = not like.liked
+        except Like.DoesNotExist:
+            pass
+
+        obj, created = Like.objects.update_or_create(author=user, photo=photo,
+                                                     defaults={'liked': toggled_like})
+        create = HttpResponse(toggled_like)
+        return create
+
+
+
+
+
+

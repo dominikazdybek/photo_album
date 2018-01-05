@@ -1,0 +1,25 @@
+{%  extends "base.html"  %}
+
+{% block title %}
+    Strona użytkownika
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center"> Galery</h1>
+     <form method="post" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+            {{ form }}
+         <br>
+        <button type="submit">Upload</button>
+    </form>
+    {% for p in photos  %}
+        <div class="parent center-block">
+            <img src="{{ p.image.url }}" class="img-responsive"/>
+            <p>{{ p.user }}
+                {{ p.creation_date }}
+                <button class="likes btn btn-primary" type="button">
+            <span class="glyphicon glyphicon-thumbs-up"></span>Polub zdjęcie
+            </button></p>
+        </div>
+    {% endfor %}
+  {% endblock %}

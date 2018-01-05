@@ -45,4 +45,4 @@ class RegisterForm(forms.Form):
 
 
 class UploadFileForm(forms.Form):
-    image = forms.FileField()
+    image = forms.FileField(label='Add photo')

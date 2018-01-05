@@ -1,12 +1,5 @@
 .parent {
    width: 600px; /* I took the width from your post and placed it in css */
-   height: 600px;
-}
-
-/* This will style any <img> element in .parent div */
-.parent img {
-   height: 80%;
-   width: 100%;
 }
 
 .my_form {
