@@ -23,3 +23,10 @@ class Like(models.Model):
     author = models.ForeignKey(User)
     photo = models.ForeignKey(Photo)
 
+
+class Comment(models.Model):
+    content = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(User)
+    photo = models.ForeignKey(Photo)
+

@@ -1,8 +1,8 @@
 from django.shortcuts import render_to_response, render, redirect
 from django.views import View
-from .models import Photo, Like
-from .forms import UploadFileForm
-from django.http import HttpResponseRedirect, HttpResponse
+from .models import Photo, Like, Comment
+from .forms import UploadFileForm, CommentForm
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from .forms import LoginForm, RegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
@@ -76,7 +76,7 @@ class MainView(View):
         photos = Photo.objects.all()
         user = request.user
         if form.is_valid():
-            instance = Photo(image = request.FILES['image'], user=user)
+            instance = Photo(image=request.FILES['image'], user=user)
             instance.save()
             return HttpResponseRedirect("/")
         return render(request, 'main.html', {'photos': photos,
@@ -85,15 +85,24 @@ class MainView(View):
 
 class UserView(View):
 
-    def get(self, request):
+    def get(self, request, name):
         user = request.user
-        photos = Photo.objects.filter(user=user).order_by('-creation_date')
+        user1 = User.objects.get(username=name)
+        like_dislike_user = Like.objects.filter(author=user)
+        photos = Photo.objects.filter(user=user1).order_by('-creation_date')
+        for photo in photos:
+            like_dislike = photo.like_set.filter(author=user).last()
+            if like_dislike is not None:
+                photo.like_dislike_user = like_dislike.liked
+            else:
+                photo.like_dislike_user = False
         form = UploadFileForm()
-        return render(request, 'main.html', {'photos': photos,
+        return render(request, 'user.html', {'photos': photos,
                                              'user': user,
-                                             'form': form})
+                                             'form': form,
+                                             'user1': user1})
 
-    def post(self, request):
+    def post(self, request, name):
         form = UploadFileForm(request.POST, request.FILES)
         photos = Photo.objects.all()
         user = request.user
@@ -101,7 +110,7 @@ class UserView(View):
             instance = Photo(image=request.FILES['image'], user=user)
             instance.save()
             return HttpResponseRedirect("/")
-        return render(request, 'user.html', {'photos': photos,
+        return render(request, 'main.html', {'photos': photos,
                                              'form': form})
 
 
@@ -123,6 +132,43 @@ class LikeView(View):
         create = HttpResponse(toggled_like)
         return create
 
+
+class PhotoView(View):
+
+    def get(self, request, my_id):
+        user = request.user
+        form = CommentForm()
+        photo = Photo.objects.get(pk=my_id)
+        like_dislike_user = Like.objects.filter(author=user)
+        # for photo in photos:
+        like_dislike = photo.like_set.filter(author=user).last()
+        if like_dislike is not None:
+            photo.like_dislike_user = like_dislike.liked
+        else:
+                photo.like_dislike_user = False
+        comment_user = Comment.objects.filter(author=request.user)
+        comments = Comment.objects.filter(photo=photo).order_by('-date')
+        return render_to_response('photo.html', {'photo': photo,
+                                                 'comments': comments,
+                                                 'user': user,
+                                                 'form': form})
+
+
+class PhotoCommentView(View):
+
+    def post(self, request, my_id):
+        photo = Photo.objects.get(pk=my_id)
+        comment = request.body
+        user = request.user
+        if comment:
+            # content = form.cleaned_data['content']
+            new_comment = Comment.objects.create(content=comment, author=user, photo=photo)
+            return JsonResponse({
+                'author': new_comment.author.username,
+                'date': new_comment.date,
+                'comment': str(new_comment.content.decode('utf-8')),
+                'id': new_comment.id
+            })
 
 
 

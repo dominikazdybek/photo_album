@@ -60,3 +60,44 @@ $('.likes').click(function () {
 
 });
 
+
+$('#comment').click(function(event) {
+
+    event.preventDefault();
+    // pobierz text komentarza
+    console.log(this);
+    var id = $(this).attr("data-prod");
+    var comment = $('#comment-input').val();
+    // wyczysc input
+    // $('#comment-input').val('');
+    // umiec comentarz w nowym divie
+
+    // wyslij komentarz do bazy danych
+    $.post(
+        '/photo/' + id + '/comments/',
+        comment
+    ).done(function (response) {
+        console.log(response);
+        var parsedDate = new Date(response.date);
+        var date = parsedDate.getUTCDate() + '/' + (parsedDate.getMonth() + 1) + '/' + parsedDate.getFullYear();
+        var time = parsedDate.getHours() + ':' + parsedDate.getMinutes();
+        newCommentDiv = $('.new');
+        $('<div><hr>' +
+            '<div class="editing-comment">' +
+            response.comment +
+            '</div>' +
+            '<button class="delete-button btn btn-default custom" type="button" style="float: right" data-comment="' +
+            response.id +
+            '"><span class="glyphicon glyphicon-trash"></span><small>delete</small>' +
+            '</button>' +
+            '<button class="edit-button btn btn-default custom" type="button" style="float: right" data-comment="' +
+            response.id +
+            '"><span class="glyphicon glyphicon-edit"></span><small class="edit-button-text">edit</small>' +
+            '</button><p>' +
+            response.author +
+            ', <small>' +
+            date + ' ' + time +
+            '</small></p></div>').insertBefore(newCommentDiv)
+    });
+});
+

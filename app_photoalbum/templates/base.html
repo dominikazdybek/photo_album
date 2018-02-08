@@ -21,7 +21,7 @@
             <a class="navbar-brand" href='/'>Strona główna</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-                <li><a href="/user"><span class="glyphicon glyphicon-user">&nbsp;
+                <li><a href="/user/{{ user.username }}"><span class="glyphicon glyphicon-user">&nbsp;
                 </span>Zalogowany : {{ user.get_username }}</a></li>
                 <li><a href="/logout"><span class="glyphicon glyphicon-log-out">&nbsp;
                 </span>Wyloguj</a></li>

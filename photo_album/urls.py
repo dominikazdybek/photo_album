@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from app_photoalbum.views import (MainView, UserLoginView, RegisterView, LogoutView, \
-                                  UserView, LikeView)
+                                  UserView, LikeView, PhotoView, PhotoCommentView)
 # to moje,
 from django.conf import settings
 from django.conf.urls.static import static
@@ -27,8 +27,10 @@ urlpatterns = [
     url(r'^user_login', UserLoginView.as_view(), name="user_login"),
     url(r'^register', RegisterView.as_view(), name='register'),
     url(r'^logout', LogoutView.as_view(), name="logout"),
-    url(r'^user', UserView.as_view(), name="user"),
+    url(r'^user/(?P<name>([-A-Za-ząćęłńóśźżĄĘŁŃÓŚŹŻ])+)/$', UserView.as_view(), name="user"),
     url(r'^photo/like/(?P<my_id>(\d)+)/$', LikeView.as_view(), name='like_product'),
+    url(r'^photo/(?P<my_id>(\d)+)/$', PhotoView.as_view(), name="photo"),
+    url(r'^photo/(?P<my_id>(\d)+)/comments/$', PhotoCommentView.as_view(), name='photo_comment'),
 
 ]
 

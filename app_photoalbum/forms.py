@@ -46,3 +46,9 @@ class RegisterForm(forms.Form):
 
 class UploadFileForm(forms.Form):
     image = forms.FileField(label='Add photo')
+
+
+class CommentForm(Form):
+    content = forms.CharField(label="", max_length=64,
+                              widget=forms.Textarea(attrs={'class': 'form-control',
+                                                           'placeholder': 'Dodaj komentarz'}))
