@@ -45,7 +45,7 @@ class RegisterForm(forms.Form):
 
 
 class UploadFileForm(forms.Form):
-    image = forms.FileField(label='Add photo')
+    image = forms.FileField(label='DODAJ ZDJĘCIE')
 
 
 class CommentForm(Form):

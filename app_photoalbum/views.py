@@ -29,7 +29,6 @@ class UserLoginView(View):
         return render(request, "user_login.html", {"form": form, "blad": True})
 
 
-
 class LogoutView(View):
     def get(self, request):
         logout(request)
@@ -55,7 +54,6 @@ class RegisterView(FormView):
 
 
 class MainView(View):
-
     def get(self, request):
         photos = Photo.objects.all().order_by('-creation_date')
         user = request.user
@@ -84,7 +82,6 @@ class MainView(View):
 
 
 class UserView(View):
-
     def get(self, request, name):
         user = request.user
         user1 = User.objects.get(username=name)
@@ -115,7 +112,6 @@ class UserView(View):
 
 
 class LikeView(View):
-
     def post(self, request, my_id):
         photo = Photo.objects.get(pk=my_id)
         user = request.user
@@ -134,7 +130,6 @@ class LikeView(View):
 
 
 class PhotoView(View):
-
     def get(self, request, my_id):
         user = request.user
         form = CommentForm()
@@ -145,7 +140,7 @@ class PhotoView(View):
         if like_dislike is not None:
             photo.like_dislike_user = like_dislike.liked
         else:
-                photo.like_dislike_user = False
+            photo.like_dislike_user = False
         comment_user = Comment.objects.filter(author=request.user)
         comments = Comment.objects.filter(photo=photo).order_by('-date')
         return render_to_response('photo.html', {'photo': photo,
@@ -155,7 +150,6 @@ class PhotoView(View):
 
 
 class PhotoCommentView(View):
-
     def post(self, request, my_id):
         photo = Photo.objects.get(pk=my_id)
         comment = request.body
@@ -171,6 +165,14 @@ class PhotoCommentView(View):
             })
 
 
+class DeleteCommentView(View):
+    def delete(self, request, comment_id):
+        comment = Comment.objects.get(pk=comment_id)
+        comment.delete()
+        return HttpResponse(status=204)
 
-
-
+    def put(self, request, comment_id):
+        comment = Comment.objects.get(pk=comment_id)
+        comment.content = request.body
+        comment.save()
+        return HttpResponse(status=204)

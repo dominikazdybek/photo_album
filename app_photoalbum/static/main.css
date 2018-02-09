@@ -1,9 +1,88 @@
 .parent {
-   width: 600px; /* I took the width from your post and placed it in css */
+    width: 600px; /* I took the width from your post and placed it in css */
 }
 
 .my_form {
     width: 40%;
     margin: 0 auto;
     float: none;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    line-height: 1.8;
+    /*color: #f5f6f7;*/
+}
+
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+    position: fixed;
+}
+
+.navbar-nav li a:hover {
+    color: #1abc9c !important;
+}
+
+.bg-1 {
+    background-color: #F5E0E2;
+    color: dimgrey;
+}
+
+.bg-2 {
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    letter-spacing: 5px;
+}
+
+.margin {
+    margin-bottom: 15px;
+    border-radius: 20px 20px 0 0;
+}
+
+.thumbnail {
+    padding: 0 0 0 0;
+    border: none;
+    border-radius: 20px;
+}
+
+.center_div {
+    margin: 0 auto;
+    width: 15% /* value of your choice which suits your alignment */
+}
+
+.jumbotron {
+    padding-top: 70px;
+    margin-bottom: 0;
+    letter-spacing: 5px;
+}
+
+.gallery {
+    background-color: #E9EDF7 !important;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#chevron_up {
+    color: pink;
+}
+
+hr {
+    border-top: 1px solid #2f2f2f;
+}
+
+#comment-input {
+    border-radius: 15px;
+}
+
+.rounded {
+    border: 1px solid pink;
+    border-radius: 5px;
 }

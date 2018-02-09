@@ -101,3 +101,65 @@ $('#comment').click(function(event) {
     });
 });
 
+
+$('#comments').on('click', '.delete-button',function () {
+// $('.delete-button').click(function () {
+    console.log("click", this);
+    var button = $(this);
+    var id = $(this).attr("data-comment");
+    var div = button.parent()
+    $.ajax({
+        url: '/comments/' + id,
+        type: 'DELETE',
+        success: function() {
+            div.remove();
+            }
+        });
+    });
+
+
+$('#comments').on("click", '.edit-button', function(){
+    // console.log("click", this.parent());
+    var button = $(this);
+    var currentTextElement = button.children('.edit-button-text');
+    var iconElement = currentTextElement.siblings('.glyphicon');
+    var id = $(this).attr("data-comment");
+    var commentElement =  $(this).siblings('.editing-comment')
+    if (currentTextElement.text() === "edit") {
+        currentTextElement.text('save');
+        iconElement.removeClass('glyphicon-edit').addClass('glyphicon-send');
+        commentElement.prop('contentEditable',true).addClass('rounded');
+    } else {
+        currentTextElement.text('edit');
+        iconElement.removeClass('glyphicon-send').addClass('glyphicon-edit');
+        commentElement.prop('contentEditable',false).removeClass('rounded');
+        var editedComment = commentElement.text();
+        $.ajax({
+            url: '/comments/' + id,
+            type: 'PUT',
+            data:editedComment,
+        });
+    }
+});
+
+
+$(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+// Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 900, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+        });
+    } // End if
+});

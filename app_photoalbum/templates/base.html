@@ -1,41 +1,45 @@
 <!doctype html>
 <html>
-    <head>
-        {% load static %}
-        <meta charset = "utf-8">
-        <title>
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>
         {% block title %}
-        Tytuł strony
+            Tytuł strony
         {% endblock %}
-        </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel='stylesheet' type='text/css' href='{% static "main.css" %}'>
-    </head>
-    <body>
-    <nav class="navbar navbar-fixed-top">
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='{% static "main.css" %}'>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">>
+<nav class="navbar  navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href='/'>Strona główna</a>
+            <a class="navbar-brand" href='/'>STRONA GŁÓWNA</a>
         </div>
-        <ul class="nav navbar-nav navbar-right">
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
                 <li><a href="/user/{{ user.username }}"><span class="glyphicon glyphicon-user">&nbsp;
-                </span>Zalogowany : {{ user.get_username }}</a></li>
+                </span> ZALOGOWANY : {{ user.get_username }}</a></li>
                 <li><a href="/logout"><span class="glyphicon glyphicon-log-out">&nbsp;
-                </span>Wyloguj</a></li>
+                </span>WYLOGUJ</a></li>
             </ul>
+        </div>
     </div>
-    </nav>
-        {% block content %}
-        {% endblock %}
+</nav>
+{% block content %}
+{% endblock %}
 
-        {% block footer %}
-            <br>
-        Copyright by Dominika
-        {% endblock %}s
-    </body>
-    <script src="{% static 'js/libs/jquery-3.2.1.min.js' %}"></script>
-    <script src="{% static 'js/ajax_function.js' %}"></script>
+<footer class="container-fluid bg-2 text-center">
+    <a href="#myPage" title="To Top">
+        <span id="chevron_up" class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <p>COPYRIGHT by DOMINIKA</p>
+</footer>
+</body>
+<script src="{% static 'js/libs/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/ajax_function.js' %}"></script>
 </html>

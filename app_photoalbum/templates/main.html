@@ -5,30 +5,39 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="text-center"> Gallery</h1>
-    <form method="post" enctype="multipart/form-data" action="">
-        {% csrf_token %}
-        {{ form }}
-        <br>
-        <button type="submit">Upload</button>
-    </form>
-    {% for photo in photos %}
-        <div class="parent center-block">
-            <div class="thumbnail">
-                <a href="/photo/{{ photo.id }}/"><img src="{{ photo.image.url }}" class="img-responsive"/></a>
-                <div class="caption text-center">
-                    <p><a href="/user/{{ photo.user }}">{{ photo.user }} </a>,
-                        {{ photo.creation_date }}
-                        <button class="likes btn btn-primary" type="button" data-photo="{{ photo.id }}">
-                            <span class="glyphicon glyphicon-thumbs-up"></span>
-                            <span class="button_text">{% if photo.like_dislike_user == False %}Polub zdjęcie{% else %}
-                                Lubisz to zdjęcie
-                            {% endif %}</span>
-                        </button>
-                        <strong class="like_count">{{ photo.quantity_of_likes }}</strong>
-                    </p>
+    <div class="jumbotron bg-1 text-center">
+        <h1 class="text-center margin"> GALERIA</h1>
+
+        <form method="post" enctype="multipart/form-data" action="">
+            {% csrf_token %}
+            <div class="center_div">
+                {{ form }}
+            </div>
+            <br>
+            <button class="btn btn-default" type="submit">DODAJ</button>
+        </form>
+    </div>
+    <div class="container-fluid gallery">
+        {% for photo in photos %}
+            <div id="portfolio" class="parent center-block">
+                <div class="thumbnail">
+                    <a href="/photo/{{ photo.id }}/"><img src="{{ photo.image.url }}"
+                                                          class="img-responsive margin"/></a>
+                    <div class="caption text-center">
+                        <p><a href="/user/{{ photo.user }}">{{ photo.user }} </a>,
+                            {{ photo.creation_date }}
+                            <button class="likes btn btn-default" type="button" data-photo="{{ photo.id }}">
+                                <span class="glyphicon glyphicon-thumbs-up"></span>
+                                <span class="button_text">{% if photo.like_dislike_user == False %}Polub
+                                    zdjęcie{% else %}
+                                    Lubisz to zdjęcie
+                                {% endif %}</span>
+                            </button>
+                            <strong class="like_count">{{ photo.quantity_of_likes }}</strong>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 {% endblock %}

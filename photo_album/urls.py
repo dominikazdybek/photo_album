@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from app_photoalbum.views import (MainView, UserLoginView, RegisterView, LogoutView, \
-                                  UserView, LikeView, PhotoView, PhotoCommentView)
+                                  UserView, LikeView, PhotoView, PhotoCommentView, DeleteCommentView)
 # to moje,
 from django.conf import settings
 from django.conf.urls.static import static
@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^photo/like/(?P<my_id>(\d)+)/$', LikeView.as_view(), name='like_product'),
     url(r'^photo/(?P<my_id>(\d)+)/$', PhotoView.as_view(), name="photo"),
     url(r'^photo/(?P<my_id>(\d)+)/comments/$', PhotoCommentView.as_view(), name='photo_comment'),
+    url(r'^comments/(?P<comment_id>(\d)+)$', DeleteCommentView.as_view(), name='delete_comment'),
 
 ]
 
