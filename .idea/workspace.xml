@@ -3,17 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="aec096df-14c5-49c9-abe8-ef4dc321c5b3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_photoalbum/admin.py" afterPath="$PROJECT_DIR$/app_photoalbum/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_photoalbum/forms.py" afterPath="$PROJECT_DIR$/app_photoalbum/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_photoalbum/models.py" afterPath="$PROJECT_DIR$/app_photoalbum/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_photoalbum/static/js/ajax_function.js" afterPath="$PROJECT_DIR$/app_photoalbum/static/js/ajax_function.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_photoalbum/static/main.css" afterPath="$PROJECT_DIR$/app_photoalbum/static/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_photoalbum/templates/base.html" afterPath="$PROJECT_DIR$/app_photoalbum/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_photoalbum/templates/main.html" afterPath="$PROJECT_DIR$/app_photoalbum/templates/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_photoalbum/templates/photo.html" afterPath="$PROJECT_DIR$/app_photoalbum/templates/photo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_photoalbum/templates/user.html" afterPath="$PROJECT_DIR$/app_photoalbum/templates/user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_photoalbum/views.py" afterPath="$PROJECT_DIR$/app_photoalbum/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/photo_album/urls.py" afterPath="$PROJECT_DIR$/photo_album/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_photoalbum/templates/register.html" afterPath="$PROJECT_DIR$/app_photoalbum/templates/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_photoalbum/templates/user_login.html" afterPath="$PROJECT_DIR$/app_photoalbum/templates/user_login.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,14 +21,14 @@
     <favorites_list name="photo_album" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.38027254">
+    <splitter split-orientation="horizontal" split-proportion="0.58236057">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="user.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/user.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="615">
-                  <caret line="41" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="14" />
+                <state relative-caret-position="165">
+                  <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -45,8 +37,18 @@
           <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/base.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+                <state relative-caret-position="270">
+                  <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="register.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/register.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="570">
+                  <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -55,8 +57,8 @@
           <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app_photoalbum/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+                <state relative-caret-position="495">
+                  <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
                   </folding>
@@ -67,18 +69,8 @@
           <file leaf-file-name="photo.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/photo.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" column="53" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="67" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user_login.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/user_login.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+                <state relative-caret-position="495">
+                  <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
                   <folding />
                 </state>
               </provider>
@@ -97,8 +89,8 @@
           <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app_photoalbum/admin.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                <state relative-caret-position="270">
+                  <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#32#0" expanded="true" />
                   </folding>
@@ -109,8 +101,8 @@
           <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app_photoalbum/forms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="287">
-                  <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
+                <state relative-caret-position="240">
+                  <caret line="20" column="62" lean-forward="false" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
                   <folding>
                     <element signature="e#0#24#0" expanded="true" />
                   </folding>
@@ -122,11 +114,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app_photoalbum/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="646">
-                  <caret line="167" column="30" lean-forward="true" selection-start-line="167" selection-start-column="30" selection-end-line="167" selection-end-column="30" />
+                <state relative-caret-position="196">
+                  <caret line="137" column="30" lean-forward="true" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
                   </folding>
@@ -134,21 +126,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/register.html">
+          <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/main.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+                <state relative-caret-position="150">
+                  <caret line="10" column="67" lean-forward="false" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/main.html">
+          <file leaf-file-name="user_login.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/user_login.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+                <state relative-caret-position="540">
+                  <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
@@ -167,8 +159,8 @@
           <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app_photoalbum/static/main.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="13" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+                <state relative-caret-position="150">
+                  <caret line="58" column="1" lean-forward="true" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -177,7 +169,7 @@
           <file leaf-file-name="ajax_function.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app_photoalbum/static/js/ajax_function.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="797">
+                <state relative-caret-position="2475">
                   <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
                   <folding>
                     <marker date="1518193690715" expanded="true" signature="2795:2807" ph="..." />
@@ -203,8 +195,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/photo_album/settings.py" />
-        <option value="$PROJECT_DIR$/app_photoalbum/templates/user_login.html" />
-        <option value="$PROJECT_DIR$/app_photoalbum/templates/register.html" />
         <option value="$PROJECT_DIR$/photo_album/urls.py" />
         <option value="$PROJECT_DIR$/app_photoalbum/admin.py" />
         <option value="$PROJECT_DIR$/app_photoalbum/models.py" />
@@ -212,10 +202,12 @@
         <option value="$PROJECT_DIR$/app_photoalbum/forms.py" />
         <option value="$PROJECT_DIR$/app_photoalbum/templates/main.html" />
         <option value="$PROJECT_DIR$/app_photoalbum/templates/user.html" />
-        <option value="$PROJECT_DIR$/app_photoalbum/static/main.css" />
         <option value="$PROJECT_DIR$/app_photoalbum/views.py" />
-        <option value="$PROJECT_DIR$/app_photoalbum/templates/base.html" />
         <option value="$PROJECT_DIR$/app_photoalbum/templates/photo.html" />
+        <option value="$PROJECT_DIR$/app_photoalbum/templates/base.html" />
+        <option value="$PROJECT_DIR$/app_photoalbum/static/main.css" />
+        <option value="$PROJECT_DIR$/app_photoalbum/templates/register.html" />
+        <option value="$PROJECT_DIR$/app_photoalbum/templates/user_login.html" />
       </list>
     </option>
   </component>
@@ -228,8 +220,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1431" />
     <option name="y" value="-4" />
-    <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="width" value="1857" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -246,7 +238,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,6 +255,12 @@
               <item name="photo_album" type="b2602c69:ProjectViewProjectNode" />
               <item name="photo_album" type="462c0819:PsiDirectoryNode" />
               <item name="app_photoalbum" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photo_album" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photo_album" type="462c0819:PsiDirectoryNode" />
+              <item name="app_photoalbum" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -274,12 +272,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PROJEKT/products_app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="SearchEverywhereHistoryKey" value="CSRF_USE_SESSIONS&#9;null&#9;null" />
   </component>
@@ -378,7 +376,7 @@
     <frame x="1431" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16927224" sideWeight="0.4963274" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16873315" sideWeight="0.4963274" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -753,8 +751,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app_photoalbum/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -763,7 +761,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app_photoalbum/static/js/ajax_function.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="797">
+        <state relative-caret-position="2475">
           <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
           <folding>
             <marker date="1518193690715" expanded="true" signature="2795:2807" ph="..." />
@@ -774,19 +772,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app_photoalbum/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
+        <state relative-caret-position="240">
+          <caret line="20" column="62" lean-forward="false" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_photoalbum/static/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -798,53 +788,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_photoalbum/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="495">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/photo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="53" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="67" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/user_login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,19 +808,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="14" />
+        <state relative-caret-position="165">
+          <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="67" lean-forward="false" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app_photoalbum/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="167" column="30" lean-forward="true" selection-start-line="167" selection-start-column="30" selection-end-line="167" selection-end-column="30" />
+        <state relative-caret-position="196">
+          <caret line="137" column="30" lean-forward="true" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_photoalbum/static/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="58" column="1" lean-forward="true" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_photoalbum/templates/user_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>

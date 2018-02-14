@@ -1,11 +1,19 @@
-{%  extends "base.html"  %}
-
-{% block title %}
-    Strona logowania
-{% endblock %}
-
-{% block content %}
-<div class="my_form">
+<!doctype html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>
+        Strona logowania
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='{% static "main.css" %}'>
+</head>
+<body>
+<div class="my_form wrapper">
     <h1>Logowanie</h1>
 
     {% if blad %}
@@ -27,14 +35,17 @@
         <br>
     </form>
     <br>
+    <div class="push"></div>
 </div>
-{%  endblock %}
-{%  block footer %}
-    <footer class="container-fluid text-center">
-        <p>
-            <a href="/logout">Wyloguj</a>
-            <a href="/user_login">Logowanie</a>
-            <a href="/register">Rejestracja</a>
-        </p>
-    </footer>
-{% endblock %}
+<footer class="container-fluid bg-2 text-center">
+    <p>
+        <a href="/logout">Wyloguj</a>
+        <a href="/user_login">Logowanie</a>
+        <a href="/register">Rejestracja</a>
+    </p>
+    <p>COPYRIGHT by DOMINIKA</p>
+</footer>
+</body>
+<script src="{% static 'js/libs/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/ajax_function.js' %}"></script>
+</html>

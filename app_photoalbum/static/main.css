@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+}
+
 .parent {
     width: 600px; /* I took the width from your post and placed it in css */
 }
@@ -8,9 +12,10 @@
     float: none;
 }
 
-body {
+body, html {
     font-family: Montserrat, sans-serif;
     line-height: 1.8;
+    height: 100%;
     /*color: #f5f6f7;*/
 }
 
@@ -85,4 +90,15 @@ hr {
 .rounded {
     border: 1px solid pink;
     border-radius: 5px;
+}
+
+footer, .push {
+    height: 142px; /*klasa .push musi mieć tę samą wysokość co klasa .footer */
+    }
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -142px;
 }
